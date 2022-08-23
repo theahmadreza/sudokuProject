@@ -1,6 +1,9 @@
 from dokusan import generators
+from subprocess import call
 import numpy as np
 
+def clear():
+    rc = call("./clear.sh")
 
 arr = np.array(list(str(generators.random_sudoku(avg_rank=150))))
     
