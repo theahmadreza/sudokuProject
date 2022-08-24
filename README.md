@@ -5,3 +5,5 @@
 - [ ] create timer for start game
 - [ ] create while loop for start
 - [ ] make clear powershell for run on windows
+- [ ] delete creating list manually 
+- [ ] send request and get all lists
