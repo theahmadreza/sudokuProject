@@ -9,21 +9,23 @@ arr = np.array(list(str(generators.random_sudoku(avg_rank=150))))
     
 print(arr.reshape(9,9))
 
-# inputs
-index = input("your index: ")
-row = input("Select row: ")
 
-# make inputs as integer
-index = int(index)
-row = int(row)
+a = True
 
-if index > 0:
-    arr[row] = index
-    print(arr.reshape(9,9))
+while True:
     
+    if a == True:
 
+        # inputs
+        index = input("your index: ")
+        row = input("Select row: ")
 
+        # make inputs integer
+        index = int(index)
+        row = int(row)
 
-# if see == '1':
-#     arr[] = 1
-#     print(arr.reshape(9,9))    
+        # core
+        arr[row] = index
+        clear()
+        print(arr.reshape(9,9))
+        
