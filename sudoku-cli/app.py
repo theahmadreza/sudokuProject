@@ -1,6 +1,7 @@
-from dokusan import generators
+from dokusan import solvers, renderers,generators
+from dokusan.boards import BoxSize, Sudoku
 from subprocess import call
-import numpy as np
+import requests
 import getpass
 
 
@@ -15,16 +16,20 @@ def getInfo():
     userName = input("your Username: ")
     password = getpass.getpass(prompt='your Password: ')
 
-    if password.lower() == PASSWORD:
+    if password.lower() == password:
         login = True
     else:
         login = False
 
 
 # core of project
-arr = np.array(list(str(generators.random_sudoku(avg_rank=150))))
+r = requests.get('https://sugoku.herokuapp.com/board?difficulty=easy')
+t = r.json()["board"]
 
-print(arr.reshape(9,9))
+sudoku = Sudoku.from_list(t, box_size=BoxSize(3, 3),)
+
+# solution = solvers.backtrack(sudoku)
+print(renderers.colorful(sudoku))
 
 
 a = True
@@ -43,7 +48,7 @@ while True:
         row = int(row)
 
         # core
-        arr[row] = index
+        t[row] = index
         # clear()
-        print(arr.reshape(9,9))
-        
+        print(renderers.colorful(sudoku))
+
