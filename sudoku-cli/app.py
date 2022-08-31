@@ -47,8 +47,50 @@ while True:
         index = int(index)
         row = int(row)
 
-        # core
-        t[row] = index
-        # clear()
-        print(renderers.colorful(sudoku))
+        if 0<row<10:
+            if row == 1:
+                row = 0
+            if row == 2:
+                row = 1
+            if row == 3:
+                row = 2           
+            if row == 4:
+                row = 3
+            if row == 5:
+                row = 4
+            if row == 6:
+                row = 5
+            if row == 7:
+                row = 6           
+            if row == 8:
+                row = 7
+            if row == 9:
+                row = 8
+        
+            argument = input("select your argument: ")
+            argument = int(argument)
+            
+            if argument == 1:
+                argument = 0
+            if argument == 2:
+                argument = 1
+            if argument == 3:
+                argument = 2
+            if argument == 4:
+                argument = 3
+            if argument == 5:
+                argument = 4
+            if argument == 6:
+                argument = 5
+            if argument == 7:
+                argument = 6
+            if argument == 8:
+                argument = 7
+            if argument == 9:
+                argument = 8    
+            
+            t[row][argument] = index
+
+            # clear()
+            print(renderers.colorful(sudoku))
 
