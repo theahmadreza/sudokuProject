@@ -29,7 +29,11 @@ t = r.json()["board"]
 sudoku = Sudoku.from_list(t, box_size=BoxSize(3, 3),)
 
 # solution = solvers.backtrack(sudoku)
-print(renderers.colorful(sudoku))
+def printBoard():
+    print(renderers.colorful(Sudoku.from_list(t, box_size=BoxSize(3, 3))))
+
+    
+printBoard()
 
 
 a = True
@@ -92,5 +96,4 @@ while True:
             t[row][argument] = index
 
             # clear()
-            print(renderers.colorful(sudoku))
-
+            printBoard()
