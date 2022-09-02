@@ -7,7 +7,7 @@ class Network:
         self.port = 5555
         self.addr = (self.server, self.port)
         self.id = self.connect()
-        print(self.id)
+
         
     def connect(self):
         try:
@@ -26,8 +26,3 @@ class Network:
             
 
 n = Network()
-
-print(n.send("Hello"))
-print(n.send("it is working"))
-post = input("your message: ")
-print(n.send(post))
